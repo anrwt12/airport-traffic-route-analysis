@@ -127,7 +127,8 @@ order by Total_passengers DESC
 
 -- 3. Assess flight frequency and identify high-traffic corridors
 
- select  origin_airport_id ,dest_airport_id , count( airline_id) as total_flights
+select   ORIGIN_CITY_NAME  , DEST_CITY_NAME , count( airline_id) as total_flights
  from airportdata
  group by 1,2
  order by total_flights desc limit 10
+
