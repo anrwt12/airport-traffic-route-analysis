@@ -124,3 +124,10 @@ on aa.airport_id = ip.dest_airport_id
 where ip.avg_passengers+ op.avg_passengers IS NOT NULL
 order by Total_passengers DESC
 
+
+-- 3. Assess flight frequency and identify high-traffic corridors
+
+ select  origin_airport_id ,dest_airport_id , count( airline_id) as total_flights
+ from airportdata
+ group by 1,2
+ order by total_flights desc limit 10
